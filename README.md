@@ -27,12 +27,14 @@ This is a fullstack clone of [Airbnb.com](https://www.airbnb.com/) application w
 
 ```sh
 yarn install
+npm install
 ```
 
 then
 
 ```sh
 yarn run dev
+npm run dev
 ```
 
 ## Viewing the dev server
