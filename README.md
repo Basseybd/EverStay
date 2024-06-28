@@ -2,10 +2,26 @@
 
 This is a fullstack clone of [Airbnb.com](https://www.airbnb.com/) application written using
 
-- nextjs
-- react
-- typescritp
-- tailwind csss
+- Next.js 13 AppRouter
+
+## UI
+
+- React
+- TypeScript
+- TailwindCss
+
+## Database and Database interaction
+
+- Prisma
+- MongoDB
+
+## Authentication
+
+- NextAuth
+
+## Uploads
+
+- Cloudinary CDN
 
 ## Running the dev server
 
