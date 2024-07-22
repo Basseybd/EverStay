@@ -2,7 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
-import RegisterModal from "./components/models/RegisterModel";
+import LoginModal from "./components/models/LoginModal";
+import RegisterModal from "./components/models/RegisterModal";
 import ToasterProvider from "./providers/ToasterProvider";
 
 export const metadata = {
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ClientOnly>
           <ToasterProvider />
+          <LoginModal />
           <RegisterModal />
           <Navbar />
         </ClientOnly>
