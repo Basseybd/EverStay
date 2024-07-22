@@ -12,7 +12,7 @@ This is a fullstack clone of [Airbnb.com](https://www.airbnb.com/) application w
 
 ## Database and Database interaction
 
-- Prisma
+- Prisma(type safe models)
 - MongoDB
 
 ## Authentication
@@ -40,5 +40,11 @@ npm run dev
 ## Viewing the dev server
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Push to MongoDB database
+
+```
+npx prisma db push
+```
 
 Deployed on Vercel [here](https://airbnb-clone-eta-ecru.vercel.app/) (https://airbnb-clone-eta-ecru.vercel.app/)
