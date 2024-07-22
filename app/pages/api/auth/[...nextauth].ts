@@ -19,26 +19,26 @@ export const authOptions: AuthOptions = {
       clientSecret: process.env.GOOGLE_SECRET as string,
     }),
     CredentialsProvider({
-      name: "credentails",
+      name: "credentials",
       credentials: {
         email: { label: "email", type: "text" },
         password: { label: "password", type: "password" },
       },
-      async authorize(credentails) {
-        if (!credentails?.email || !credentails?.password) {
+      async authorize(credentials) {
+        if (!credentials?.email || !credentials?.password) {
           throw new Error("Invalid credentials");
         }
 
         const user = await prisma.user.findUnique({
           where: {
-            email: credentails.email,
+            email: credentials.email,
           },
         });
         if (!user || !user?.hashedPassword) {
           throw new Error("invalid credentials");
         }
         const isCorrectPassword = await bcrypt.compare(
-          credentails.password,
+          credentials.password,
           user.hashedPassword
         );
         if (!isCorrectPassword) {
