@@ -1,6 +1,5 @@
 "use client";
 
-import { signIn } from "next-auth/react";
 import axios from "axios";
 import { AiFillAccountBook, AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
@@ -15,6 +14,7 @@ import Input from "../Inputs";
 import toast from "react-hot-toast";
 import Button from "../Button";
 import { callbackify } from "util";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const LoginModal = () => {
@@ -33,15 +33,14 @@ const LoginModal = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
+
     signIn("credentials", { ...data, redirect: false }).then((callback) => {
-      console.log(data);
       setIsLoading(false);
       if (callback?.ok) {
-        toast.success("Logged in");
+        toast.success("Logged in successfully");
         router.refresh();
         loginModal.onClose();
-      }
-      if (callback?.error) {
+      } else if (callback?.error) {
         toast.error(callback.error);
       }
     });
