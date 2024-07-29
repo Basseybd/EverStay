@@ -1,6 +1,6 @@
 "use client";
 
-import { User } from "@prisma/client";
+import { SafeUser } from "@/app/types";
 import { useState, useCallback } from "react";
 import Avatar from "../Avatar";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -10,7 +10,7 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 
 interface UserMenuProps {
-  currentUser?: User | null;
+  currentUser?: SafeUser | null;
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
