@@ -4,7 +4,7 @@ import { IconType } from "react-icons";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 import queryString from "query-string";
-import { catergories } from "./Navbar/Catergories";
+import { catergories } from "./navbar/Catergories";
 
 interface CategoryBoxProps {
   icon: IconType;
