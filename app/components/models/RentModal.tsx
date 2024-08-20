@@ -7,6 +7,8 @@ import { catergories } from "../navbar/Catergories";
 import CatergoryInput from "../input/CatergoryInput";
 import { useForm, FieldValues } from "react-hook-form";
 import { describe } from "node:test";
+import CountrySelect from "../input/CountrySelect";
+import dynamic from "next/dynamic";
 
 enum STEPS {
   CATERGORY = 0,
@@ -44,6 +46,11 @@ const RentModal = () => {
   });
 
   const category = watch("category");
+  const location = watch("location");
+  const Map = useMemo(
+    () => dynamic(() => import("../Map"), { ssr: false }),
+    [location]
+  );
 
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
@@ -96,11 +103,27 @@ const RentModal = () => {
     </div>
   );
 
+  if (step === STEPS.LOCATION) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        {" "}
+        <Heading
+          title="Where is your place located"
+          subtitle="Help guest find you"
+        />
+        <CountrySelect
+          onChange={(location) => setCustomValue("location", location)}
+        />
+        <Map center={location?.latlng} />
+      </div>
+    );
+  }
+
   return (
     <Modal
       isOpen={rentModal.isOpen}
       onClose={rentModal.onClose}
-      onSubmit={rentModal.onClose}
+      onSubmit={onNext}
       actionLabel={actionLabel}
       secondaryActionLabel={secondaryActionLabel}
       secondaryAction={step === STEPS.CATERGORY ? undefined : onBack}
