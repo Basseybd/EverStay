@@ -10,7 +10,7 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import { error } from "console";
 import Modal from "./Modal";
 import Heading from "../Heading";
-import Input from "../Inputs";
+import Input from "../input/Inputs";
 import toast from "react-hot-toast";
 import Button from "../Button";
 import { callbackify } from "util";

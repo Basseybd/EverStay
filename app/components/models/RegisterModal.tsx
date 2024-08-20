@@ -9,7 +9,7 @@ import useRegisterModal from "@/app/hooks/useRegisterModal";
 import { error } from "console";
 import Modal from "./Modal";
 import Heading from "../Heading";
-import Input from "../Inputs";
+import Input from "../input/Inputs";
 import toast from "react-hot-toast";
 import Button from "../Button";
 import { signIn } from "next-auth/react";
