@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/navbar/Navbar";
+import Navbar from "./components/tempnavbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
 import LoginModal from "./components/models/LoginModal";
 import RegisterModal from "./components/models/RegisterModal";
