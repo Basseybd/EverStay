@@ -17,7 +17,6 @@ export async function POST(request: Request) {
     price,
   } = body;
 
-  // Validation: Check if required fields are present
   if (
     !title ||
     !description ||
