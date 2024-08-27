@@ -37,7 +37,7 @@ const useFavorite = ({ listingId, currentUser }: IUseFavorite) => {
 
         await request();
         router.refresh();
-        toast.success("Success");
+        toast.success("Favorite toggled");
       } catch (error) {
         console.error("Error toggling favorite:", error); // Log the error
         toast.error("Something went wrong with favorites.");

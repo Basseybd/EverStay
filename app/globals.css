@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  img {
-    width: auto;
-    height: auto;
-  }
-}
-
 html,
 body,
 :root {
