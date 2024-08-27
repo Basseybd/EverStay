@@ -4,7 +4,6 @@ import { IconType } from "react-icons";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 import queryString from "query-string";
-import { catergories } from "./navbar/Catergories";
 
 interface CategoryBoxProps {
   icon: IconType;
@@ -25,9 +24,9 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
     if (params) {
       currentQUery = queryString.parse(params.toString());
     }
-    const updatedQuery: any = { ...currentQUery, catergory: label };
-    if (params?.get("catergory") === label) {
-      delete updatedQuery.catergory;
+    const updatedQuery: any = { ...currentQUery, category: label };
+    if (params?.get("category") === label) {
+      delete updatedQuery.category;
     }
     const url = queryString.stringifyUrl(
       { url: "/", query: updatedQuery },

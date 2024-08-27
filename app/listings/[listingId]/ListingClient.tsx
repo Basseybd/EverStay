@@ -2,7 +2,7 @@
 
 import { Reservations } from "@prisma/client";
 import { SafeListing, SafeUser } from "@/app/types";
-import { catergories } from "@/app/components/navbar/Catergories";
+import { categories } from "@/app/components/navbar/Categories";
 import { useMemo } from "react";
 import Container from "@/app/components/Container";
 import ListingHead from "@/app/components/listing/ListingHead";
@@ -19,8 +19,8 @@ const ListingClient: React.FC<ListingClientProps> = ({
   listing,
   currentUser,
 }) => {
-  const catergory = useMemo(() => {
-    return catergories.find((item) => item.label === listing.category);
+  const category = useMemo(() => {
+    return categories.find((item) => item.label === listing.category);
   }, [listing.category]);
   return (
     <Container>
@@ -36,7 +36,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6">
             <ListingInfo
               user={listing.user}
-              catergory={catergory}
+              category={category}
               description={listing.description}
               roomCount={listing.roomCount}
               guestCount={listing.guestCount}

@@ -2,14 +2,14 @@
 
 import { IconType } from "react-icons";
 
-interface CatergoryInputProps {
+interface CategoryInputProps {
   icon: IconType;
   label: string;
   selected?: boolean;
   onClick: (value: string) => void;
 }
 
-const CatergoryInput: React.FC<CatergoryInputProps> = ({
+const CategoryInput: React.FC<CategoryInputProps> = ({
   icon: Icon,
   label,
   selected,
@@ -28,4 +28,4 @@ const CatergoryInput: React.FC<CatergoryInputProps> = ({
   );
 };
 
-export default CatergoryInput;
+export default CategoryInput;

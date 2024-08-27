@@ -1,12 +1,12 @@
 "use client";
+
 import useRentModal from "@/app/hooks/useRentModal";
 import Modal from "./Modal";
 import { useMemo, useState } from "react";
 import Heading from "../Heading";
-import { catergories } from "../navbar/Catergories";
-import CatergoryInput from "../input/CatergoryInput";
+import { categories } from "../navbar/Categories";
+import CategoryInput from "../input/CategoryInput";
 import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
-import { describe } from "node:test";
 import CountrySelect from "../input/CountrySelect";
 import dynamic from "next/dynamic";
 import Counter from "../input/Counter";
@@ -121,13 +121,13 @@ const RentModal = () => {
   let bodyContent = (
     <div className="flex flex-col gap-8">
       <Heading
-        title="Which of these best describes yopur place?"
+        title="Which of these best describes your place?"
         subtitle="Pick a category"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto">
-        {catergories.map((item) => (
+        {categories.map((item) => (
           <div key={item.label} className="col-span-1">
-            <CatergoryInput
+            <CategoryInput
               onClick={(category) => setCustomValue("category", category)}
               selected={category === item.label}
               label={item.label}
@@ -143,8 +143,8 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Where is your place located"
-          subtitle="Help guest find you"
+          title="Where is your place located?"
+          subtitle="Help guests find you"
         />
         <CountrySelect
           onChange={(location) => setCustomValue("location", location)}
@@ -159,25 +159,25 @@ const RentModal = () => {
       <div className="flex flex-col gap-8">
         <Heading
           title="Share some basics about your place"
-          subtitle="What amenities do you have"
+          subtitle="What amenities do you have?"
         />
         <Counter
-          title="Guest"
-          subtitle="How many guests do you allow"
+          title="Guests"
+          subtitle="How many guests do you allow?"
           value={guestCount}
           onChange={(value) => setCustomValue("guestCount", value)}
         />
         <hr />
         <Counter
           title="Rooms"
-          subtitle="How many rooms do you have"
+          subtitle="How many rooms do you have?"
           value={roomCount}
           onChange={(value) => setCustomValue("roomCount", value)}
         />
         <hr />
         <Counter
           title="Bathrooms"
-          subtitle="How many bathrooms do you have"
+          subtitle="How many bathrooms do you have?"
           value={bathroomCount}
           onChange={(value) => setCustomValue("bathroomCount", value)}
         />
@@ -189,8 +189,8 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Add a phoyo of your place"
-          subtitle="Show guest wehat your place looks like"
+          title="Add a photo of your place"
+          subtitle="Show guests what your place looks like"
         />
         <ImageUpload
           value={imageSrc}
@@ -204,7 +204,7 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="How would you describe your place"
+          title="How would you describe your place?"
           subtitle="Short and sweet works best"
         />
         <Input
@@ -262,4 +262,5 @@ const RentModal = () => {
     />
   );
 };
+
 export default RentModal;

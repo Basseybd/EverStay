@@ -3,7 +3,7 @@ import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
-import Catergories from "./Catergories";
+import Catergories from "./Categories";
 import { SafeUser } from "@/app/types";
 
 interface NavbarProps {

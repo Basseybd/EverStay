@@ -1,7 +1,7 @@
 "use client";
 
 import Container from "../Container";
-import CatergoryBox from "../CatergoryBox";
+import CategoryBox from "../CategoryBox";
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
 import {
   GiBoatFishing,
@@ -19,7 +19,7 @@ import { BsSnow } from "react-icons/bs";
 import { IoDiamond } from "react-icons/io5";
 import { useParams, usePathname, useSearchParams } from "next/navigation";
 
-export const catergories = [
+export const categories = [
   {
     label: "Beach",
     icon: TbBeach,
@@ -97,9 +97,9 @@ export const catergories = [
   },
 ];
 
-const Catergories = () => {
+const Categories = () => {
   const params = useSearchParams();
-  const category = params?.get("catergory");
+  const category = params?.get("category");
   const pathname = usePathname();
   const isMainPAge = pathname === "/";
 
@@ -110,8 +110,8 @@ const Catergories = () => {
   return (
     <Container>
       <div className="pt-4 flex flex-row items-center justify-between overflow-x-auto">
-        {catergories.map((item) => (
-          <CatergoryBox
+        {categories.map((item) => (
+          <CategoryBox
             key={item.label}
             label={item.label}
             selected={category === item.label}
@@ -123,4 +123,4 @@ const Catergories = () => {
   );
 };
 
-export default Catergories;
+export default Categories;
