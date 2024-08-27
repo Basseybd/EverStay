@@ -1,7 +1,7 @@
 "use client";
 
 import { SafeListing, safeReservations, SafeUser } from "@/app/types";
-import { categories } from "@/app/components/tempnavbar/Categories";
+import { categories } from "@/app/components/navbar/Categories";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Container from "@/app/components/Container";
 import ListingHead from "@/app/components/listing/ListingHead";
