@@ -16,7 +16,6 @@ export async function POST(request: Request, { params }: { params: IParams }) {
   const { listingId } = params;
 
   if (!listingId || typeof listingId !== "string") {
-    console.error("Invalid listing ID:", listingId);
     throw new Error("Invalid ID");
   }
 
