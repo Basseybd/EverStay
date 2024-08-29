@@ -10,8 +10,11 @@ import RentModal from "./components/modals/RentModal";
 import SearchModal from "./components/modals/SearchModal";
 
 export const metadata = {
-  title: "Airbnb",
-  description: "Airbnb Clone",
+  title: "EverStay",
+  description: "Marketplace for short- and long-term homestays",
+  icons: {
+    icon: "/images/EverStayLogoWhite.png", // Path to your favicon
+  },
 };
 
 const inter = Inter({ subsets: ["latin"] });

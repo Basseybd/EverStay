@@ -1,48 +1,40 @@
-# Bassey Airbnb Clone
+# EverStay: Your home, your haven.
 
-This is a fullstack clone of [Airbnb.com](https://www.airbnb.com/) application written using
+EverStay is a full-stack marketplace for short- and long-term homestays, inspired by [Airbnb.com](https://www.airbnb.com/). This application is built using:
 
-- Next.js 13 AppRouter
+## Technologies
 
-## UI
+- **UI**: React, TypeScript, Tailwind CSS
+- **Database**: Prisma (type-safe models), MongoDB
+- **Authentication**: NextAuth
+- **Uploads**: Cloudinary CDN
 
-- React
-- TypeScript
-- TailwindCss
+## Running the Dev Server
 
-## Database and Database interaction
-
-- Prisma(type safe models)
-- MongoDB
-
-## Authentication
-
-- NextAuth
-
-## Uploads
-
-- Cloudinary CDN
-
-## Running the dev server
+1. Install dependencies:
 
 ```sh
 yarn install
 ```
 
-then
+2. Start the development server:
 
 ```sh
 yarn run dev
 ```
 
-## Viewing the dev server
+## Viewing the Dev Server
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the result.
 
-## Push to MongoDB database
+## Pushing to MongoDB Database
 
-```
+Run the following command to push your Prisma schema to the database:
+
+```sh
 npx prisma db push
 ```
 
-Deployed on Vercel [here](https://airbnb-clone-eta-ecru.vercel.app/) (https://airbnb-clone-eta-ecru.vercel.app/)
+The project is deployed on Vercel and can be viewed [here](https://everstay.vercel.app/).
+
+---
