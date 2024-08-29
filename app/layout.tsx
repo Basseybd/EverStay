@@ -13,7 +13,7 @@ export const metadata = {
   title: "EverStay",
   description: "Marketplace for short- and long-term homestays",
   icons: {
-    icon: "/images/EverStayLogoWhite.png", // Path to your favicon
+    icon: "/images/EverStayLogoWhite.png",
   },
 };
 
