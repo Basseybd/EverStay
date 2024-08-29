@@ -7,11 +7,18 @@ import Avatar from "../Avatar";
 import ListingCategory from "./ListingCategory";
 import dynamic from "next/dynamic";
 
-const Map = dynamic(() => import("../Map"), { ssr: false });
+// Dynamically import the Map component, disabling SSR
+const Map = dynamic(() => import("../Map"), {
+  ssr: false,
+});
 
 interface ListingInfoProps {
   user: SafeUser;
-  category: { icon: IconType; label: string; description: string } | undefined;
+  category?: {
+    icon: IconType;
+    label: string;
+    description: string;
+  };
   description: string;
   roomCount: number;
   guestCount: number;
@@ -46,16 +53,18 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
       </div>
       <hr />
       {category && (
-        <ListingCategory
-          icon={category.icon}
-          label={category.label}
-          description={category.description}
-        />
+        <>
+          <ListingCategory
+            icon={category.icon}
+            label={category.label}
+            description={category.description}
+          />
+          <hr />
+        </>
       )}
+      <div className="text-lg font-light text-neutral-500">{description}</div>
       <hr />
-      <div className="text-lg gont-light text-neutral-500">{description}</div>
-      <hr />
-      <Map center={coordinates} />
+      {coordinates && <Map center={coordinates} />}
     </div>
   );
 };

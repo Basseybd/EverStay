@@ -25,7 +25,7 @@ const SearchModal = () => {
   const params = useSearchParams();
 
   const [step, setStep] = useState(STEPS.LOCATION);
-  const [location, setlocation] = useState<CountrySelectValue>();
+  const [location, setLocation] = useState<CountrySelectValue>();
   const [guestCount, setGuestCount] = useState(1);
   const [roomCount, setRoomCount] = useState(1);
   const [bathroomCount, setBathroomCount] = useState(1);
@@ -116,12 +116,12 @@ const SearchModal = () => {
   let bodyContent = (
     <div className="flex flex-col gap-8">
       <Heading
-        title="Where do you wanna go"
+        title="Where do you want to go?"
         subtitle="Find the perfect location!"
       />
       <CountrySelect
         value={location}
-        onChange={(value) => setlocation(value as CountrySelectValue)}
+        onChange={(value) => setLocation(value as CountrySelectValue)}
       />
       <hr />
       <Map center={location?.latlng} />
@@ -146,23 +146,23 @@ const SearchModal = () => {
   if (step === STEPS.INFO) {
     bodyContent = (
       <div className="flex flex-col gap-8">
-        <Heading title="More information" subtitle="Find your perfract place" />
+        <Heading title="More information" subtitle="Find your perfect place" />
         <Counter
-          title="Guest"
+          title="Guests"
           subtitle="How many guests are coming?"
           value={guestCount}
           onChange={(value) => setGuestCount(value)}
         />
         <Counter
           title="Rooms"
-          subtitle="How many rooms are coming?"
-          value={guestCount}
+          subtitle="How many rooms are needed?"
+          value={roomCount}
           onChange={(value) => setRoomCount(value)}
         />
         <Counter
           title="Bathrooms"
-          subtitle="How many bathrooms are coming?"
-          value={guestCount}
+          subtitle="How many bathrooms are needed?"
+          value={bathroomCount}
           onChange={(value) => setBathroomCount(value)}
         />
       </div>

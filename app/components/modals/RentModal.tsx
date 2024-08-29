@@ -17,7 +17,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 enum STEPS {
-  CATERGORY = 0,
+  CATEGORY = 0,
   LOCATION = 1,
   INFO = 2,
   IMAGES = 3,
@@ -29,7 +29,7 @@ const RentModal = () => {
   const router = useRouter();
   const rentModal = useRentModal();
 
-  const [step, setSteps] = useState(STEPS.CATERGORY);
+  const [step, setSteps] = useState(STEPS.CATEGORY);
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -62,7 +62,7 @@ const RentModal = () => {
 
   const Map = useMemo(
     () => dynamic(() => import("../Map"), { ssr: false }),
-    []
+    [location] // Ensure it's only recomputed when location changes
   );
 
   const setCustomValue = (id: string, value: any) => {
@@ -93,7 +93,7 @@ const RentModal = () => {
         toast.success("Listing Created!");
         router.refresh();
         reset();
-        setSteps(STEPS.CATERGORY);
+        setSteps(STEPS.CATEGORY);
         rentModal.onClose();
       })
       .catch(() => {
@@ -112,7 +112,7 @@ const RentModal = () => {
   }, [step]);
 
   const secondaryActionLabel = useMemo(() => {
-    if (step === STEPS.CATERGORY) {
+    if (step === STEPS.CATEGORY) {
       return undefined;
     }
     return "Back";
@@ -256,7 +256,7 @@ const RentModal = () => {
       onSubmit={handleSubmit(onSubmit)}
       actionLabel={actionLabel}
       secondaryActionLabel={secondaryActionLabel}
-      secondaryAction={step === STEPS.CATERGORY ? undefined : onBack}
+      secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
       title="List Your Haven!"
       body={bodyContent}
     />
