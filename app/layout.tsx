@@ -8,13 +8,11 @@ import ToasterProvider from "./providers/ToasterProvider";
 import getCurrentUser from "./actions/getCurrentUser";
 import RentModal from "./components/modals/RentModal";
 import SearchModal from "./components/modals/SearchModal";
+import Head from "next/head";
 
 export const metadata = {
   title: "EverStay",
   description: "Marketplace for short- and long-term homestays",
-  icons: {
-    icon: "/images/EverStayLogoWhite.png",
-  },
 };
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,6 +25,13 @@ export default async function RootLayout({
   const currentUser = await getCurrentUser();
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        {/* Alternatively, you can specify a PNG favicon */}
+        {/* <link rel="icon" type="image/png" href="/favicon.png" /> */}
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </Head>
       <body className={inter.className}>
         <ClientOnly>
           <ToasterProvider />

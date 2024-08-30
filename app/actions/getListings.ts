@@ -65,6 +65,7 @@ export default async function getListings(params: IListingsParams) {
         createdAt: "desc",
       },
     });
+
     const safeListings = listings.map((listing) => ({
       ...listing,
       createdAt: listing.createdAt.toISOString(),
@@ -72,6 +73,7 @@ export default async function getListings(params: IListingsParams) {
 
     return safeListings;
   } catch (error: any) {
-    throw new Error(error);
+    console.error("Error fetching listings:", error);
+    throw new Error("Failed to fetch listings. Please try again later.");
   }
 }
