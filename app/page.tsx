@@ -8,33 +8,33 @@ import EmptyState from "./components/EmptyState";
 import ListingCard from "./components/listing/ListingCard";
 import { SafeListing } from "./types";
 
-interface HomeProps {
-  searchParams: IListingsParams;
-}
+// interface HomeProps {
+//   searchParams: IListingsParams;
+// }
 
-const Home = async ({ searchParams }: HomeProps) => {
-  let listings: SafeListing[] = [];
-  let currentUser = null;
+const Home = () => {
+  // let listings: SafeListing[] = [];
+  // let currentUser = null;
 
-  try {
-    listings = await getListings(searchParams);
-  } catch (error) {
-    console.error("Failed to fetch listings:", error);
-  }
+  // try {
+  //   listings = await getListings(searchParams);
+  // } catch (error) {
+  //   console.error("Failed to fetch listings:", error);
+  // }
 
-  try {
-    currentUser = await getCurrentUser();
-  } catch (error) {
-    console.error("Failed to fetch current user:", error);
-  }
+  // try {
+  //   currentUser = await getCurrentUser();
+  // } catch (error) {
+  //   console.error("Failed to fetch current user:", error);
+  // }
 
-  if (listings.length === 0) {
-    return (
-      <ClientOnly>
-        <EmptyState showReset />
-      </ClientOnly>
-    );
-  }
+  // if (listings.length === 0) {
+  //   return (
+  //     <ClientOnly>
+  //       <EmptyState showReset />
+  //     </ClientOnly>
+  //   );
+  // }
 
   return (
     <ClientOnly>
