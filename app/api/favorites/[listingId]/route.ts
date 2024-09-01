@@ -33,7 +33,7 @@ export async function POST(request: Request, { params }: { params: IParams }) {
 
 export async function DELETE(
   request: Request,
-  { params }: { params: IParams }
+  { params }: { params: IParams },
 ) {
   const currentUser = await getCurrentUser();
 

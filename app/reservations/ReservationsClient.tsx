@@ -37,7 +37,7 @@ const ReservationsClient: React.FC<ReservationsClientProps> = ({
           setDeleteingId("");
         });
     },
-    [router]
+    [router],
   );
 
   return (

@@ -40,7 +40,7 @@ const SearchModal = () => {
       dynamic(() => import("../Map"), {
         ssr: false,
       }),
-    [location]
+    [location],
   );
 
   const onBack = () => {
@@ -80,7 +80,7 @@ const SearchModal = () => {
 
     const url = qs.stringifyUrl(
       { url: "/", query: updatedQuery },
-      { skipNull: true }
+      { skipNull: true },
     );
 
     setStep(STEPS.LOCATION);

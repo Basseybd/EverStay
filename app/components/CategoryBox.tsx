@@ -30,7 +30,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
     }
     const url = queryString.stringifyUrl(
       { url: "/", query: updatedQuery },
-      { skipNull: true }
+      { skipNull: true },
     );
     router.push(url);
   }, [label, params, router]);

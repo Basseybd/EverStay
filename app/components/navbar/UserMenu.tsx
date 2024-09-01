@@ -36,7 +36,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
       router.push(path);
       setIsOpen(false);
     },
-    [router]
+    [router],
   );
 
   return (

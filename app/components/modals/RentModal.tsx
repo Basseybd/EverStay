@@ -62,7 +62,7 @@ const RentModal = () => {
 
   const Map = useMemo(
     () => dynamic(() => import("../Map"), { ssr: false }),
-    [location] // Ensure it's only recomputed when location changes
+    [location], // Ensure it's only recomputed when location changes
   );
 
   const setCustomValue = (id: string, value: any) => {
