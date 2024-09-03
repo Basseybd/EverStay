@@ -3,8 +3,6 @@ import getCurrentUser from "./actions/getCurrentUser";
 import getListings, { IListingsParams } from "./actions/getListings";
 import ClientOnly from "./components/ClientOnly";
 import EmptyState from "./components/EmptyState";
-import HomeClient from "./HomeClient";
-
 import Container from "./components/Container";
 import ListingCard from "./components/listing/ListingCard";
 
