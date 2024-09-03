@@ -73,7 +73,6 @@ export default async function getListings(params: IListingsParams) {
     return safeListings;
   } catch (error: any) {
     console.error("Error fetching listings:", error);
-    return [];
-    // throw new Error("Failed to fetch listings. Please try again later.");
+    throw new Error("Failed to fetch listings. Please try again later.");
   }
 }
