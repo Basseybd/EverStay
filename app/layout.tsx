@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
