@@ -1,4 +1,3 @@
-import { categories } from "./../components/navbar/Categories";
 import prisma from "@/app/libs/prismadb";
 
 export interface IListingsParams {
